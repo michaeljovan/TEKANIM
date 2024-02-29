@@ -1,0 +1,14 @@
+body{background-color: #bbb;
+}
+header, nav, footer, article{display: block;}
+nav{float: left;width: 25%;border: groove#000000}
+article{float: right; width: 65%}
+
+footer{clear: both;}
+#canvas{
+    background-color: #bbbbbb;
+    margin: 10px;
+    padding: 10px;
+    border: double #0000ff;
+}
+#canvas2{background-color: #fff;}

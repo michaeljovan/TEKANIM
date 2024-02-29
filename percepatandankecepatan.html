@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css"
+        href="styleDasar.css">
+</head>
+<body>
+    <canvas id="canvas" width="500" height="500"></canvas>
+    <script src="utils.js"></script>
+    <script src="ball.js"></script>
+    <script>    
+        window.onload=function(){
+            var canvas=document.getElementById('canvas'),
+                    context=canvas.getContext('2d'),
+                    bolaB=new Ball(20,"red"); 
+                    bolaB.x=canvas.width/2;
+                    bolaB.y=canvas.height/2;
+                    bolaB.draw(context);
+                    bolaB.vx=0;
+                    bolaB.ax=0.1;
+    
+                (function drawFrame(){
+            window.requestAnimationFrame(drawFrame,canvas);		
+            context.clearRect(0,0,canvas.width,canvas.height);
+    
+            bolaB.vx +=bolaB.ax;
+            bolaB.x +=bolaB.vx;
+        
+            bolaB.draw(context);
+            if (bolaB.x>=canvas.width) {bolaB.x=0};
+            }());
+        };
+    
+    </script>
+</body>
+</html>
